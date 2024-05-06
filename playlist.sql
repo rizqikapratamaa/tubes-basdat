@@ -1,7 +1,8 @@
 create table playlist (
 	email_pembuat VARCHAR(29),
 	id_playlist VARCHAR(50) PRIMARY KEY,
-	nama_playlist TEXT
+	nama_playlist TEXT,
+	FOREIGN KEY (email_pembuat) REFERENCES appleid(email)
 );
 insert into playlist (email_pembuat, id_playlist, nama_playlist) values ('gbaroschi@china.com.cn', 'PL657880', 'quis libero nullam');
 insert into playlist (email_pembuat, id_playlist, nama_playlist) values ('ddohr4@baidu.com', 'PL000152', 'donec diam neque');
