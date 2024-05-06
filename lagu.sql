@@ -6,7 +6,8 @@ create table lagu (
 	durasi INT,
 	tanggal_rilis DATE,
 	FOREIGN KEY (email_artis) REFERENCES appleid(email),
-	FOREIGN KEY (id_label) REFERENCES label(id_label)
+	FOREIGN KEY (id_label) REFERENCES label(id_label),
+	CHECK (id_playlist REGEXP '^SNG[0-9]{5}$')
 );
 
 insert into lagu (id_lagu, email_artis, id_label, judul_konten, durasi, tanggal_rilis) values ('SNG37466', 'acettell1@salon.com', 'LBL31824', 'nonummy', 133, '2003-08-24');

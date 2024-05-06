@@ -2,7 +2,8 @@ create table label (
 	id_label CHAR(8) PRIMARY KEY NOT NULL,
 	nama_label VARCHAR(50),
 	asal_negara VARCHAR(50),
-	tahun_berdiri VARCHAR(50)
+	tahun_berdiri VARCHAR(50),
+	CHECK (tahun_berdiri REGEXP '^[0-9]{4}$')
 );
 insert into label (id_label, nama_label, asal_negara, tahun_berdiri) values ('LBL08916', 'Littel, Lemke and Casper', 'America', 2016);
 insert into label (id_label, nama_label, asal_negara, tahun_berdiri) values ('LBL36151', 'Boyer-Bruen', 'Lebanon', 2005);

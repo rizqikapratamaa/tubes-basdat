@@ -5,7 +5,11 @@ create table videomusik (
 	id_label VARCHAR(50),
 	judul_konten TEXT,
 	durasi INT,
-	tanggal_rilis DATE
+	tanggal_rilis DATE,
+	FOREIGN KEY (id_lagu) REFERENCES lagu(id_lagu),
+	FOREIGN KEY (email_artis) REFERENCES appleid(email),
+	FOREIGN KEY (id_label) REFERENCES label(id_label),
+	CHECK (id_video_musik REGEXP '^MV[0-9]{6}$')
 );
 insert into videomusik (id_video_musik, id_lagu, email_artis, id_label, judul_konten, durasi, tanggal_rilis) values ('MV699492', 'SNG09357', 'mfyfield0@usnews.com', 'LBL82104', 'velit id', 405, '2024-01-20');
 insert into videomusik (id_video_musik, id_lagu, email_artis, id_label, judul_konten, durasi, tanggal_rilis) values ('MV463192', 'SNG09461', 'scastagnone1@nydailynews.com', 'LBL56463', 'sit amet', 461, '2023-08-20');

@@ -8,7 +8,8 @@ CREATE TABLE videoekstra (
     FOREIGN KEY (email_artis) REFERENCES appleid(email),
     FOREIGN KEY (email_host) REFERENCES appleid(email),
 	FOREIGN KEY (id_label) REFERENCES label(id_label),
-    CHECK (email_artis <> email_host)
+    CHECK (email_artis <> email_host),
+	CHECK (id_video_ekstra REGEXP '^EKS[0-9]{5}$')
 );
 
 insert into videoekstra (id_video_ekstra, email_artis, email_host, id_label, durasi, tanggal_rilis) values ('EKS10275', 'lattestone0@google.es', 'dlehuquet0@elegantthemes.com', 'LBL07449', 5345, '2015-05-24');
