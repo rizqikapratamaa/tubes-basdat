@@ -1,106 +1,134 @@
-create table pemasaran (
-	id_lagu VARCHAR(8) PRIMARY KEY NOT NULL,
-	id_produk VARCHAR(8) PRIMARY KEY NOT NULL,
-    FOREIGN KEY (id_lagu) REFERENCES lagu(id_lagu),
-    FOREIGN KEY (id_produk) REFERENCES lagu(id_produk)
+CREATE TABLE Pemasaran (
+    id_lagu VARCHAR(8) NOT NULL,
+    id_produk VARCHAR(8) NOT NULL,
+    FOREIGN KEY (id_lagu) REFERENCES Lagu(id_lagu),
+    FOREIGN KEY (id_produk) REFERENCES Produk(id_produk)
 );
-insert into pemasaran (id_lagu, id_produk) values ('SNG73389', 'PDT15976');
-insert into pemasaran (id_lagu, id_produk) values ('SNG74486', 'PDT62162');
-insert into pemasaran (id_lagu, id_produk) values ('SNG30250', 'PDT78677');
-insert into pemasaran (id_lagu, id_produk) values ('SNG93594', 'PDT54310');
-insert into pemasaran (id_lagu, id_produk) values ('SNG76985', 'PDT39144');
-insert into pemasaran (id_lagu, id_produk) values ('SNG46648', 'PDT98895');
-insert into pemasaran (id_lagu, id_produk) values ('SNG44306', 'PDT66936');
-insert into pemasaran (id_lagu, id_produk) values ('SNG55061', 'PDT05392');
-insert into pemasaran (id_lagu, id_produk) values ('SNG47766', 'PDT29796');
-insert into pemasaran (id_lagu, id_produk) values ('SNG18044', 'PDT94493');
-insert into pemasaran (id_lagu, id_produk) values ('SNG99365', 'PDT45339');
-insert into pemasaran (id_lagu, id_produk) values ('SNG23725', 'PDT04709');
-insert into pemasaran (id_lagu, id_produk) values ('SNG92628', 'PDT39144');
-insert into pemasaran (id_lagu, id_produk) values ('SNG14032', 'PDT11025');
-insert into pemasaran (id_lagu, id_produk) values ('SNG62530', 'PDT39995');
-insert into pemasaran (id_lagu, id_produk) values ('SNG00891', 'PDT11491');
-insert into pemasaran (id_lagu, id_produk) values ('SNG04886', 'PDT26678');
-insert into pemasaran (id_lagu, id_produk) values ('SNG31111', 'PDT39979');
-insert into pemasaran (id_lagu, id_produk) values ('SNG00891', 'PDT71282');
-insert into pemasaran (id_lagu, id_produk) values ('SNG23725', 'PDT50627');
-insert into pemasaran (id_lagu, id_produk) values ('SNG74486', 'PDT07081');
-insert into pemasaran (id_lagu, id_produk) values ('SNG14032', 'PDT16662');
-insert into pemasaran (id_lagu, id_produk) values ('SNG70783', 'PDT70859');
-insert into pemasaran (id_lagu, id_produk) values ('SNG94915', 'PDT11491');
-insert into pemasaran (id_lagu, id_produk) values ('SNG28146', 'PDT85093');
-insert into pemasaran (id_lagu, id_produk) values ('SNG56851', 'PDT14401');
-insert into pemasaran (id_lagu, id_produk) values ('SNG66681', 'PDT13398');
-insert into pemasaran (id_lagu, id_produk) values ('SNG11686', 'PDT45339');
-insert into pemasaran (id_lagu, id_produk) values ('SNG62530', 'PDT64685');
-insert into pemasaran (id_lagu, id_produk) values ('SNG65166', 'PDT89147');
-insert into pemasaran (id_lagu, id_produk) values ('SNG76833', 'PDT11491');
-insert into pemasaran (id_lagu, id_produk) values ('SNG13197', 'PDT45447');
-insert into pemasaran (id_lagu, id_produk) values ('SNG55826', 'PDT97115');
-insert into pemasaran (id_lagu, id_produk) values ('SNG11591', 'PDT85093');
-insert into pemasaran (id_lagu, id_produk) values ('SNG47862', 'PDT16662');
-insert into pemasaran (id_lagu, id_produk) values ('SNG46648', 'PDT70859');
-insert into pemasaran (id_lagu, id_produk) values ('SNG54061', 'PDT11025');
-insert into pemasaran (id_lagu, id_produk) values ('SNG94915', 'PDT71282');
-insert into pemasaran (id_lagu, id_produk) values ('SNG92779', 'PDT97115');
-insert into pemasaran (id_lagu, id_produk) values ('SNG46619', 'PDT75497');
-insert into pemasaran (id_lagu, id_produk) values ('SNG79564', 'PDT71282');
-insert into pemasaran (id_lagu, id_produk) values ('SNG05651', 'PDT51509');
-insert into pemasaran (id_lagu, id_produk) values ('SNG76985', 'PDT00267');
-insert into pemasaran (id_lagu, id_produk) values ('SNG92628', 'PDT08500');
-insert into pemasaran (id_lagu, id_produk) values ('SNG31111', 'PDT85093');
-insert into pemasaran (id_lagu, id_produk) values ('SNG67179', 'PDT94827');
-insert into pemasaran (id_lagu, id_produk) values ('SNG84525', 'PDT98895');
-insert into pemasaran (id_lagu, id_produk) values ('SNG55061', 'PDT54310');
-insert into pemasaran (id_lagu, id_produk) values ('SNG43576', 'PDT04709');
-insert into pemasaran (id_lagu, id_produk) values ('SNG73467', 'PDT39979');
-insert into pemasaran (id_lagu, id_produk) values ('SNG33169', 'PDT52762');
-insert into pemasaran (id_lagu, id_produk) values ('SNG99950', 'PDT34766');
-insert into pemasaran (id_lagu, id_produk) values ('SNG09675', 'PDT14364');
-insert into pemasaran (id_lagu, id_produk) values ('SNG92628', 'PDT51509');
-insert into pemasaran (id_lagu, id_produk) values ('SNG18838', 'PDT15976');
-insert into pemasaran (id_lagu, id_produk) values ('SNG27716', 'PDT08500');
-insert into pemasaran (id_lagu, id_produk) values ('SNG14032', 'PDT55904');
-insert into pemasaran (id_lagu, id_produk) values ('SNG78850', 'PDT78677');
-insert into pemasaran (id_lagu, id_produk) values ('SNG43131', 'PDT77371');
-insert into pemasaran (id_lagu, id_produk) values ('SNG66607', 'PDT94493');
-insert into pemasaran (id_lagu, id_produk) values ('SNG67179', 'PDT34766');
-insert into pemasaran (id_lagu, id_produk) values ('SNG57419', 'PDT11491');
-insert into pemasaran (id_lagu, id_produk) values ('SNG64130', 'PDT86026');
-insert into pemasaran (id_lagu, id_produk) values ('SNG78565', 'PDT11025');
-insert into pemasaran (id_lagu, id_produk) values ('SNG76985', 'PDT07081');
-insert into pemasaran (id_lagu, id_produk) values ('SNG54061', 'PDT05392');
-insert into pemasaran (id_lagu, id_produk) values ('SNG21308', 'PDT04054');
-insert into pemasaran (id_lagu, id_produk) values ('SNG57419', 'PDT64685');
-insert into pemasaran (id_lagu, id_produk) values ('SNG31108', 'PDT11025');
-insert into pemasaran (id_lagu, id_produk) values ('SNG11686', 'PDT50627');
-insert into pemasaran (id_lagu, id_produk) values ('SNG04059', 'PDT89147');
-insert into pemasaran (id_lagu, id_produk) values ('SNG04886', 'PDT94827');
-insert into pemasaran (id_lagu, id_produk) values ('SNG13434', 'PDT54310');
-insert into pemasaran (id_lagu, id_produk) values ('SNG37466', 'PDT48569');
-insert into pemasaran (id_lagu, id_produk) values ('SNG43799', 'PDT55904');
-insert into pemasaran (id_lagu, id_produk) values ('SNG42416', 'PDT86026');
-insert into pemasaran (id_lagu, id_produk) values ('SNG47862', 'PDT39979');
-insert into pemasaran (id_lagu, id_produk) values ('SNG64130', 'PDT39144');
-insert into pemasaran (id_lagu, id_produk) values ('SNG65166', 'PDT50627');
-insert into pemasaran (id_lagu, id_produk) values ('SNG18044', 'PDT05392');
-insert into pemasaran (id_lagu, id_produk) values ('SNG18044', 'PDT50627');
-insert into pemasaran (id_lagu, id_produk) values ('SNG63620', 'PDT14401');
-insert into pemasaran (id_lagu, id_produk) values ('SNG25566', 'PDT29796');
-insert into pemasaran (id_lagu, id_produk) values ('SNG11686', 'PDT09461');
-insert into pemasaran (id_lagu, id_produk) values ('SNG46619', 'PDT66936');
-insert into pemasaran (id_lagu, id_produk) values ('SNG56432', 'PDT08500');
-insert into pemasaran (id_lagu, id_produk) values ('SNG56662', 'PDT85985');
-insert into pemasaran (id_lagu, id_produk) values ('SNG55736', 'PDT39979');
-insert into pemasaran (id_lagu, id_produk) values ('SNG21308', 'PDT71282');
-insert into pemasaran (id_lagu, id_produk) values ('SNG04059', 'PDT11491');
-insert into pemasaran (id_lagu, id_produk) values ('SNG62530', 'PDT55904');
-insert into pemasaran (id_lagu, id_produk) values ('SNG69722', 'PDT34766');
-insert into pemasaran (id_lagu, id_produk) values ('SNG74486', 'PDT39995');
-insert into pemasaran (id_lagu, id_produk) values ('SNG63985', 'PDT52762');
-insert into pemasaran (id_lagu, id_produk) values ('SNG18108', 'PDT16662');
-insert into pemasaran (id_lagu, id_produk) values ('SNG47766', 'PDT39995');
-insert into pemasaran (id_lagu, id_produk) values ('SNG73467', 'PDT55904');
-insert into pemasaran (id_lagu, id_produk) values ('SNG55826', 'PDT86026');
-insert into pemasaran (id_lagu, id_produk) values ('SNG23463', 'PDT08556');
-insert into pemasaran (id_lagu, id_produk) values ('SNG15400', 'PDT66936');
+
+DELIMITER //
+
+CREATE TRIGGER email_sama_trigger
+BEFORE INSERT ON Pemasaran
+FOR EACH ROW
+BEGIN
+    DECLARE lagu_email VARCHAR(255);
+    DECLARE produk_email VARCHAR(255);
+    
+    -- Get the email associated with the id_lagu from the Lagu table
+    SELECT email_artis INTO lagu_email FROM Lagu WHERE id_lagu = NEW.id_lagu;
+    
+    -- Get the email associated with the id_produk from the Produk table
+    SELECT email_pembuat INTO produk_email FROM Produk WHERE id_produk = NEW.id_produk;
+    
+    -- Check if the emails are the same, if not, raise an error
+    IF lagu_email <> produk_email THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'The email associated with the song and product must be the same.';
+    END IF;
+END;
+//
+
+DELIMITER ;
+
+
+
+INSERT INTO Pemasaran (id_lagu, id_produk) VALUES
+('SNG28583', 'PDT11409'),
+('SNG31108', 'PDT11409'),
+('SNG31111', 'PDT11409'),
+('SNG43576', 'PDT11409'),
+('SNG47766', 'PDT11409'),
+('SNG55061', 'PDT11409'),
+('SNG78565', 'PDT11409'),
+('SNG28583', 'PDT22478'),
+('SNG31108', 'PDT22478'),
+('SNG31111', 'PDT22478'),
+('SNG43576', 'PDT22478'),
+('SNG47766', 'PDT22478'),
+('SNG55061', 'PDT22478'),
+('SNG78565', 'PDT22478'),
+('SNG28583', 'PDT24656'),
+('SNG31108', 'PDT24656'),
+('SNG31111', 'PDT24656'),
+('SNG43576', 'PDT24656'),
+('SNG47766', 'PDT24656'),
+('SNG55061', 'PDT24656'),
+('SNG78565', 'PDT24656'),
+('SNG28583', 'PDT54568'),
+('SNG31108', 'PDT54568'),
+('SNG31111', 'PDT54568'),
+('SNG43576', 'PDT54568'),
+('SNG47766', 'PDT54568'),
+('SNG55061', 'PDT54568'),
+('SNG78565', 'PDT54568'),
+('SNG28583', 'PDT67772'),
+('SNG31108', 'PDT67772'),
+('SNG31111', 'PDT67772'),
+('SNG43576', 'PDT67772'),
+('SNG47766', 'PDT67772'),
+('SNG55061', 'PDT67772'),
+('SNG78565', 'PDT67772'),
+('SNG28583', 'PDT92274'),
+('SNG31108', 'PDT92274'),
+('SNG31111', 'PDT92274'),
+('SNG43576', 'PDT92274'),
+('SNG47766', 'PDT92274'),
+('SNG55061', 'PDT92274'),
+('SNG78565', 'PDT92274'),
+('SNG24271', 'PDT38764'),
+('SNG25566', 'PDT38764'),
+('SNG30202', 'PDT38764'),
+('SNG64130', 'PDT38764'),
+('SNG66681', 'PDT38764'),
+('SNG94915', 'PDT38764'),
+('SNG24271', 'PDT40912'),
+('SNG25566', 'PDT40912'),
+('SNG30202', 'PDT40912'),
+('SNG64130', 'PDT40912'),
+('SNG66681', 'PDT40912'),
+('SNG94915', 'PDT40912'),
+('SNG24271', 'PDT65941'),
+('SNG25566', 'PDT65941'),
+('SNG30202', 'PDT65941'),
+('SNG64130', 'PDT65941'),
+('SNG66681', 'PDT65941'),
+('SNG94915', 'PDT65941'),
+('SNG24271', 'PDT75215'),
+('SNG25566', 'PDT75215'),
+('SNG30202', 'PDT75215'),
+('SNG64130', 'PDT75215'),
+('SNG66681', 'PDT75215'),
+('SNG94915', 'PDT75215'),
+('SNG02891', 'PDT05812'),
+('SNG18044', 'PDT05812'),
+('SNG25320', 'PDT05812'),
+('SNG28146', 'PDT05812'),
+('SNG36115', 'PDT05812'),
+('SNG67179', 'PDT05812'),
+('SNG74486', 'PDT05812'),
+('SNG76924', 'PDT05812'),
+('SNG92779', 'PDT05812'),
+('SNG02891', 'PDT35588'),
+('SNG18044', 'PDT35588'),
+('SNG25320', 'PDT35588'),
+('SNG28146', 'PDT35588'),
+('SNG36115', 'PDT35588'),
+('SNG67179', 'PDT35588'),
+('SNG74486', 'PDT35588'),
+('SNG76924', 'PDT35588'),
+('SNG92779', 'PDT35588'),
+('SNG02891', 'PDT35788'),
+('SNG18044', 'PDT35788'),
+('SNG25320', 'PDT35788'),
+('SNG28146', 'PDT35788'),
+('SNG36115', 'PDT35788'),
+('SNG67179', 'PDT35788'),
+('SNG74486', 'PDT35788'),
+('SNG76924', 'PDT35788'),
+('SNG92779', 'PDT35788'),
+('SNG02891', 'PDT64411'),
+('SNG18044', 'PDT64411'),
+('SNG25320', 'PDT64411'),
+('SNG28146', 'PDT64411'),
+('SNG36115', 'PDT64411'),
+('SNG67179', 'PDT64411'),
+('SNG74486', 'PDT64411');

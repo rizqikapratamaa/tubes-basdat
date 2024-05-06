@@ -3,9 +3,7 @@ create table appleid (
 	password VARCHAR(50),
 	nama_pengguna VARCHAR(50),
 	no_telp_pemulihan VARCHAR(50),
-	CHECK (email REGEXP '^[^@]+@([^@.]+\\.)+[^@.]+$'),
-	CHECK (no_telp_pemulihan REGEXP '^\\+[0-9]{1,}$'),
-	CHECK (nama_pengguna REGEXP '^[a-zA-Z]+$')
+	CHECK (email REGEXP '^[^@]+@([^@.]+\\.)+[^@.]+$')
 );
 insert into appleid (email, password, nama_pengguna, no_telp_pemulihan) values ('nluffman0@theglobeandmail.com', 'xT3=kk_S,+rc', 'Nils Luffman', '+33 581 977 4718');
 insert into appleid (email, password, nama_pengguna, no_telp_pemulihan) values ('acettell1@salon.com', 'eZ8#0.@RUPUNU', 'Alf Cettell', '+62 951 931 8308');

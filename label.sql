@@ -5,6 +5,7 @@ create table label (
 	tahun_berdiri VARCHAR(50),
 	CHECK (tahun_berdiri REGEXP '^[0-9]{4}$')
 );
+
 insert into label (id_label, nama_label, asal_negara, tahun_berdiri) values ('LBL08916', 'Littel, Lemke and Casper', 'America', 2016);
 insert into label (id_label, nama_label, asal_negara, tahun_berdiri) values ('LBL36151', 'Boyer-Bruen', 'Lebanon', 2005);
 insert into label (id_label, nama_label, asal_negara, tahun_berdiri) values ('LBL56085', 'Borer-Jast', 'China', 2014);
@@ -23,5 +24,5 @@ insert into label (id_label, nama_label, asal_negara, tahun_berdiri) values ('LB
 insert into label (id_label, nama_label, asal_negara, tahun_berdiri) values ('LBL26441', 'Kris-Stehr', 'China', 2005);
 insert into label (id_label, nama_label, asal_negara, tahun_berdiri) values ('LBL92927', 'Botsford, Schowalter and Rau', 'Portugal', 2015);
 insert into label (id_label, nama_label, asal_negara, tahun_berdiri) values ('LBL23123', 'Johns Group', 'China', 2007);
-insert into label (id_label, nama_label, asal_negara, tahun_berdiri) values ('LBL75389', 'Runte-Murazik', 'Sweden', 0);
+insert into label (id_label, nama_label, asal_negara, tahun_berdiri) values ('LBL75389', 'Runte-Murazik', 'Sweden', 2000);
 insert into label (id_label, nama_label, asal_negara, tahun_berdiri) values ('LBL83521', 'Cole-Bailey', 'China', 2011);
