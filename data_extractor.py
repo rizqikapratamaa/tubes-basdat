@@ -115,3 +115,6 @@ formatted_result = ", ".join(id_playlists)
 
 print("data:", formatted_result)
 print(f'jumlah data: {len(id_playlists)}')
+
+unique = set(id_playlists)
+print("data unik:", len(unique))
