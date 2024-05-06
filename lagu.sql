@@ -4,7 +4,9 @@ create table lagu (
 	id_label VARCHAR(50),
 	judul_konten VARCHAR(255),
 	durasi INT,
-	tanggal_rilis DATE
+	tanggal_rilis DATE,
+	FOREIGN KEY (email_artis) REFERENCES appleid(email),
+	FOREIGN KEY (id_label) REFERENCES label(id_label)
 );
 
 insert into lagu (id_lagu, email_artis, id_label, judul_konten, durasi, tanggal_rilis) values ('SNG37466', 'acettell1@salon.com', 'LBL31824', 'nonummy', 133, '2003-08-24');
