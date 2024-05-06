@@ -1,5 +1,5 @@
 create table label (
-	id_label VARCHAR(50) PRIMARY KEY,
+	id_label CHAR(8) PRIMARY KEY NOT NULL,
 	nama_label VARCHAR(50),
 	asal_negara VARCHAR(50),
 	tahun_berdiri VARCHAR(50)

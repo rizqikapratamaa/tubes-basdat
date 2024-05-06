@@ -1,5 +1,5 @@
-create table AppleID (
-	email VARCHAR(50) PRIMARY KEY,
+create table appleid (
+	email VARCHAR(50) PRIMARY KEY NOT NULL,
 	password VARCHAR(50),
 	nama_pengguna VARCHAR(50),
 	no_telp_pemulihan VARCHAR(50)
