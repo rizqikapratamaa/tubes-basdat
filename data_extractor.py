@@ -1,12 +1,7 @@
-create table lagu (
-	id_lagu CHAR(8) PRIMARY KEY NOT NULL,
-	email_artis VARCHAR(50),
-	id_label VARCHAR(50),
-	judul_konten VARCHAR(255),
-	durasi INT,
-	tanggal_rilis DATE
-);
+import re
 
+# Blok teks dengan perintah insert into playlist
+sql_text = """
 insert into lagu (id_lagu, email_artis, id_label, judul_konten, durasi, tanggal_rilis) values ('SNG37466', 'acettell1@salon.com', 'LBL31824', 'nonummy', 133, '2003-08-24');
 insert into lagu (id_lagu, email_artis, id_label, judul_konten, durasi, tanggal_rilis) values ('SNG09121', 'epegrumh@e-recht24.de', 'LBL50417', 'erat fermentum', 199, '2020-04-08');
 insert into lagu (id_lagu, email_artis, id_label, judul_konten, durasi, tanggal_rilis) values ('SNG28146', 'jlyptrade6@google.it', 'LBL84900', 'risus', 387, '2022-01-24');
@@ -107,3 +102,16 @@ insert into lagu (id_lagu, email_artis, id_label, judul_konten, durasi, tanggal_
 insert into lagu (id_lagu, email_artis, id_label, judul_konten, durasi, tanggal_rilis) values ('SNG73467', 'acettell1@salon.com', 'LBL18428', 'tincidunt', 117, '2017-12-12');
 insert into lagu (id_lagu, email_artis, id_label, judul_konten, durasi, tanggal_rilis) values ('SNG65166', 'epegrumh@e-recht24.de', 'LBL98452', 'etiam faucibus cursus', 439, '2018-09-10');
 insert into lagu (id_lagu, email_artis, id_label, judul_konten, durasi, tanggal_rilis) values ('SNG14032', 'wromanf@ihg.com', 'LBL81874', 'in lectus pellentesque', 428, '2019-08-31');
+"""
+
+# Pola regex untuk mengekstrak nilai id_playlist
+pattern = re.compile(r"'(.*?)', '.*?', '.*?'")
+
+# Ekstrak id_playlist menggunakan regex
+id_playlists = re.findall(pattern, sql_text)
+
+# Gabungkan hasil dengan format yang diinginkan
+formatted_result = ", ".join(id_playlists)
+
+print("data:", formatted_result)
+print(f'jumlah data: {len(id_playlists)}')
