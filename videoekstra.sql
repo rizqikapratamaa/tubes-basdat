@@ -1,11 +1,16 @@
-create table videoekstra (
-	id_video_ekstra VARCHAR(50) PRIMARY KEY NOT NULL,
-	email_artis VARCHAR(50),
-	email_host VARCHAR(50),
-	id_label VARCHAR(50),
-	durasi INT,
-	tanggal_rilis DATE
+CREATE TABLE videoekstra (
+    id_video_ekstra VARCHAR(50) PRIMARY KEY NOT NULL,
+    email_artis VARCHAR(50),
+    email_host VARCHAR(50),
+    id_label VARCHAR(50),
+    durasi INT,
+    tanggal_rilis DATE,
+    FOREIGN KEY (email_artis) REFERENCES appleid(email),
+    FOREIGN KEY (email_host) REFERENCES appleid(email),
+	FOREIGN KEY (id_label) REFERENCES label(id_label),
+    CHECK (email_artis <> email_host)
 );
+
 insert into videoekstra (id_video_ekstra, email_artis, email_host, id_label, durasi, tanggal_rilis) values ('EKS10275', 'lattestone0@google.es', 'dlehuquet0@elegantthemes.com', 'LBL07449', 5345, '2015-05-24');
 insert into videoekstra (id_video_ekstra, email_artis, email_host, id_label, durasi, tanggal_rilis) values ('EKS33975', 'mravilus1@exblog.jp', 'rackland1@stanford.edu', 'LBL91095', 5987, '2018-11-09');
 insert into videoekstra (id_video_ekstra, email_artis, email_host, id_label, durasi, tanggal_rilis) values ('EKS76451', 'dciotti2@seesaa.net', 'rfeake2@networksolutions.com', 'LBL96676', 298, '2009-05-03');
