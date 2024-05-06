@@ -5,10 +5,15 @@ create table lagu (
 	judul_konten VARCHAR(255),
 	durasi INT,
 	tanggal_rilis DATE,
-	FOREIGN KEY (email_artis) REFERENCES appleid(email),
-	FOREIGN KEY (id_label) REFERENCES label(id_label),
 	CHECK (id_lagu REGEXP '^SNG[0-9]{5}$')
 );
+
+-- Add constrain and foreign key
+ALTER TABLE lagu
+ADD CONSTRAINT fk_email_artis_lagu FOREIGN KEY (email_artis) REFERENCES appleid(email);
+
+ALTER TABLE lagu
+ADD CONSTRAINT fk_id_label_lagu FOREIGN KEY (id_label) REFERENCES label(id_label);
 
 insert into lagu (id_lagu, email_artis, id_label, judul_konten, durasi, tanggal_rilis) values ('SNG37466', 'jlyptrade6@google.it', 'LBL88736', 'Body of War', 79, '2015-06-29');
 insert into lagu (id_lagu, email_artis, id_label, judul_konten, durasi, tanggal_rilis) values ('SNG09121', 'acettell1@salon.com', 'LBL51202', 'Champagne for Caesar', 269, '2006-11-29');
