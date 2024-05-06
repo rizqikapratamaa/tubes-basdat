@@ -1,4 +1,4 @@
-CREATE TABLE Pemasaran (
+CREATE TABLE pemasaran (
     id_lagu VARCHAR(8) NOT NULL,
     id_produk VARCHAR(8) NOT NULL,
     FOREIGN KEY (id_lagu) REFERENCES Lagu(id_lagu),
@@ -8,7 +8,7 @@ CREATE TABLE Pemasaran (
 DELIMITER //
 
 CREATE TRIGGER email_sama_trigger
-BEFORE INSERT ON Pemasaran
+BEFORE INSERT ON pemasaran
 FOR EACH ROW
 BEGIN
     DECLARE lagu_email VARCHAR(255);
@@ -31,7 +31,7 @@ DELIMITER ;
 
 
 
-INSERT INTO Pemasaran (id_lagu, id_produk) VALUES
+INSERT INTO pemasaran (id_lagu, id_produk) VALUES
 ('SNG28583', 'PDT11409'),
 ('SNG31108', 'PDT11409'),
 ('SNG31111', 'PDT11409'),
