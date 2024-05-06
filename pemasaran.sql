@@ -1,7 +1,9 @@
-import re
-
-# Blok teks dengan perintah insert into playlist
-sql_text = """
+create table Pemasaran (
+	id_lagu VARCHAR(8) PRIMARY KEY NOT NULL,
+	id_produk VARCHAR(8) PRIMARY KEY NOT NULL,
+    FOREIGN KEY (id_lagu) REFERENCES lagu(id_lagu),
+    FOREIGN KEY (id_produk) REFERENCES lagu(id_produk)
+);
 insert into Pemasaran (id_lagu, id_produk) values ('SNG73389', 'PDT15976');
 insert into Pemasaran (id_lagu, id_produk) values ('SNG74486', 'PDT62162');
 insert into Pemasaran (id_lagu, id_produk) values ('SNG30250', 'PDT78677');
@@ -102,26 +104,3 @@ insert into Pemasaran (id_lagu, id_produk) values ('SNG73467', 'PDT55904');
 insert into Pemasaran (id_lagu, id_produk) values ('SNG55826', 'PDT86026');
 insert into Pemasaran (id_lagu, id_produk) values ('SNG23463', 'PDT08556');
 insert into Pemasaran (id_lagu, id_produk) values ('SNG15400', 'PDT66936');
-
-"""
-
-# Pola regex untuk mengekstrak nilai id_playlist
-pattern = re.compile(r"\('\w{8}', '\w{8}'\)")
-
-# Ekstrak id_playlist menggunakan regex
-id_playlists = re.findall(pattern, sql_text)
-
-# Gabungkan hasil dengan format yang diinginkan
-formatted_result = ", ".join(id_playlists)
-
-print("data:", formatted_result)
-
-for match in id_playlists:
-    print("Ditemukan pasangan:", match)
-
-print(f'jumlah data: {len(id_playlists)}')
-
-
-
-unique = set(id_playlists)
-print("data unik:", len(unique))
