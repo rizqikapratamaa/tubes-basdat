@@ -4,7 +4,8 @@ create table produk (
     judul_produk TEXT,
     genre VARCHAR(28),
     tanggal_rilis DATE,
-    tipe_produk VARCHAR(6)
+    tipe_produk VARCHAR(6),
+    FOREIGN KEY (email_pembuat) REFERENCES appleid(email)
 );
 insert into produk (id_produk, email_pembuat, judul_produk, genre, tanggal_rilis, tipe_produk) values ('PDT05392', 'rcluettj@imageshack.us', 'aenean fermentum donec ut mauris', 'Bluegrass', '7/10/2023', 'EP');
 insert into produk (id_produk, email_pembuat, judul_produk, genre, tanggal_rilis, tipe_produk) values ('PDT55904', 'bmacgaughey9@wordpress.com', 'vitae nisi nam', 'Techno', '9/4/2023', 'Single');
