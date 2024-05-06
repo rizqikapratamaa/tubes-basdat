@@ -1,10 +1,10 @@
 Semua: 
-'nluffman0@theglobeandmail.com', 'acettell1@salon.com', 'nliston3@ihg.com', 'ddohr4@baidu.com', 'jlyptrade6@google.it', 'jburnsall7@phpbb.com', 'aarckoll8@google.ca', 'bmacgaughey9@wordpress.com', 'lmerigonb@admin.ch', 'lpaudind@abc.net.au', 'clarvente@adobe.com', 'wromanf@ihg.com', 'avaughng@dagondesign.com', 'epegrumh@e-recht24.de',  'rcluettj@imageshack.us', 'mcanadasa@illinois.edu', 'gbaroschi@china.com.cn', 'cfigurec@abc.net.au', 'hritchie2@nbcnews.com', 'rfollett5@domainmarket.com'
+nluffman0@theglobeandmail.com, acettell1@salon.com, nliston3@ihg.com, ddohr4@baidu.com, jlyptrade6@google.it, jburnsall7@phpbb.com, aarckoll8@google.ca, bmacgaughey9@wordpress.com, lmerigonb@admin.ch, lpaudind@abc.net.au, clarvente@adobe.com, wromanf@ihg.com, avaughng@dagondesign.com, epegrumh@e-recht24.de,  rcluettj@imageshack.us, mcanadasa@illinois.edu, gbaroschi@china.com.cn, cfigurec@abc.net.au, hritchie2@nbcnews.com, rfollett5@domainmarket.com
 
-Pengguna: 'mcanadasa@illinois.edu', 'gbaroschi@china.com.cn', 'cfigurec@abc.net.au', 'hritchie2@nbcnews.com', 'rfollett5@domainmarket.com'
+Pengguna: mcanadasa@illinois.edu, gbaroschi@china.com.cn, cfigurec@abc.net.au, hritchie2@nbcnews.com, rfollett5@domainmarket.com
 
-Artis: 'jlyptrade6@google.it', 'lpaudind@abc.net.au', 'nluffman0@theglobeandmail.com', 'avaughng@dagondesign.com', 'wromanf@ihg.com', 'rcluettj@imageshack.us', 'bmacgaughey9@wordpress.com', 'lmerigonb@admin.ch', 'acettell1@salon.com', 'epegrumh@e-recht24.de'
+Artis: jlyptrade6@google.it, lpaudind@abc.net.au, nluffman0@theglobeandmail.com, avaughng@dagondesign.com, wromanf@ihg.com, rcluettj@imageshack.us, bmacgaughey9@wordpress.com, lmerigonb@admin.ch, acettell1@salon.com, epegrumh@e-recht24.de
 
-Host: 'acettell1@salon.com', 'lpaudind@abc.net.au', 'avaughng@dagondesign.com', 'bmacgaughey9@wordpress.com', 'ddohr4@baidu.com', 'aarckoll8@google.ca'
+Host: acettell1@salon.com, lpaudind@abc.net.au, avaughng@dagondesign.com, bmacgaughey9@wordpress.com, ddohr4@baidu.com, aarckoll8@google.ca
 
-Writer: 'nluffman0@theglobeandmail.com', 'jlyptrade6@google.it', 'lmerigonb@admin.ch', 'jburnsall7@phpbb.com', 'lpaudind@abc.net.au', 'clarvente@adobe.com', 'avaughng@dagondesign.com', 'wromanf@ihg.com', 'nliston3@ihg.com'
+Writer: nluffman0@theglobeandmail.com, jlyptrade6@google.it, lmerigonb@admin.ch, jburnsall7@phpbb.com, lpaudind@abc.net.au, clarvente@adobe.com, avaughng@dagondesign.com, wromanf@ihg.com, nliston3@ihg.com
