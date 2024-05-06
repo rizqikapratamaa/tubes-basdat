@@ -1,7 +1,8 @@
 CREATE TABLE kualitaslagu (
     id_lagu VARCHAR(8) NOT NULL,
     kualitas_audio VARCHAR(15) CHECK (kualitas_audio IN ('Dolby Atmos', 'Hi-Res Lossless')),
-    PRIMARY KEY (id_lagu, kualitas_audio)
+    PRIMARY KEY (id_lagu, kualitas_audio),
+	FOREIGN KEY (id_lagu) REFERENCES lagu(id_lagu)
 );
 
 insert into kualitaslagu (id_lagu, kualitas_audio) values ('SNG43131', 'Hi-Res Lossless');
