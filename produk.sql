@@ -1,6 +1,6 @@
 create table produk (
     id_produk VARCHAR(8) PRIMARY KEY NOT NULL,
-    email_pembuat VARCHAR(55),
+    email_pembuat VARCHAR(55) FOREIGN KEY NOT NULL,
     judul_produk TEXT,
     genre VARCHAR(28),
     tanggal_rilis DATE,
