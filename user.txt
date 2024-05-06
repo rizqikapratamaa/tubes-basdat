@@ -12,3 +12,5 @@ Writer: nluffman0@theglobeandmail.com, jlyptrade6@google.it, lmerigonb@admin.ch,
 Genre: Pop, Rock, Hip-Hop/Rap, R&B/Soul, Jazz, Classical, Blues, Country, Reggae, Electronic Dance Music (EDM), House, Techno, Trance, Dubstep, Drum and Bass, Metal, Punk, Ska, Folk, Indie Rock, Alternative Rock, Latin, Gospel, Bluegrass, Opera, Grunge, Funk, New Wave, Synthpop, Disco
 
 id_playlist: PL657880, PL000152, PL877370, PL955965, PL350728, PL434174, PL743729, PL721050, PL286116, PL049264, PL131841, PL862217, PL989439, PL636169, PL984738, PL109835, PL019955, PL655496, PL503365, PL724244, PL287122, PL167541, PL498238, PL431760, PL855189, PL689308, PL688664, PL667277, PL983007, PL670162, PL928353, PL631897, PL578910, PL640592, PL617290, PL655935, PL050033, PL190847, PL917481, PL813503, PL169254, PL324115, PL923531, PL015253, PL372906, PL051456, PL619025, PL153563, PL098962, PL296563
+
+kualitas audio: Hi-Res Lossless, Dolby Atmos
