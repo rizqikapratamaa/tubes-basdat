@@ -1,5 +1,5 @@
 1. Lagu berkualitas: Mengambil daftar nama lagu dengan kualitas audio "Hi-Res Lossless" yang memiliki video musik.
-SELECT l.judul_konten
+SELECT DISTINCT l.judul_konten
 FROM lagu AS l, kualitaslagu AS kl, videomusik AS vm
 WHERE l.id_lagu = kl.id_lagu
     AND l.id_lagu = vm.id_lagu
@@ -8,9 +8,9 @@ WHERE l.id_lagu = kl.id_lagu
 2. Pelajar berdedikasi tinggi: Pengguna yang memiliki jenis langganan aktif "Pelajar" dan memiliki setidaknya satu lagu dengan kualitas "Dolby Atmos"
 SELECT ai.nama_pengguna
 FROM appleid AS ai
-    NATURAL JOIN langgananAS l
+    NATURAL JOIN langganan AS l
     NATURAL JOIN subscriptionplan as sp
-WHERE l.status is TRUE
+WHERE l.status_aktif is TRUE
     AND sp.jenis_langganan = 'Pelajar'
 
 INTERSECT
@@ -26,7 +26,7 @@ SELECT ai.nama_pengguna, SUM(sp.harga_bulanan)
 FROM appleid AS ai
     NATURAL JOIN videoekstra AS ve
     NATURAL JOIN langganan AS l
-    NATURAL JOIN subcriptionplan AS sp
+    NATURAL JOIN subscriptionplan AS sp
 GROUP BY ai.email
 HAVING SUM(sp.harga_bulanan) > 200000;
 
@@ -36,12 +36,12 @@ insert into langganan (email, jenis_langganan, tanggal_mulai, tanggal_berakhir) 
 insert into langganan (email, jenis_langganan, tanggal_mulai, tanggal_berakhir) values ('acettell1@salon.com', 'Perorangan', '2011-01-04', '2011-02-04');
 
 4. Pelajar multitalenta: Pelajar yang pernah menjadi Artis, Host, dan Writer
-SELECT ai1.nama_pengguna
+SELECT DISTINCT ai1.nama_pengguna
 FROM appleid AS ai1 
     NATURAL JOIN langganan AS l1
 WHERE l1.jenis_langganan = 'Pelajar'
-    AND ai1.email IN (
-	SELECT ai.nama_pengguna
+    AND ai1.nama_pengguna IN (
+	SELECT DISTINCT ai.nama_pengguna
 	FROM appleid AS ai, lagu AS l, videoekstra AS ve, liriklagu AS ll
 	WHERE ai.email = l.email_artis
     	    AND ai.email = ve.email_host
@@ -56,7 +56,7 @@ insert into langganan(email, jenis_langganan, tanggal_mulai, tanggal_berakhir) v
 insert into lagu(id_lagu, email_artis, id_label, judul_konten, durasi, tanggal_rilis) values ('SNG75651', '13522420@std.stei.itb.ac.id', 'LBL23123', 'Long Live Inazuma', 600, '2024-04-25');
 insert into produk(id_produk, email_pembuat, judul_produk, genre, tanggal_rilis, tipe_produk) values ('PDT69420', '13522420@std.stei.itb.ac.id', 'Ei', 'Folk', '2024-04-25', 'Single');
 insert into pemasaran(id_lagu, id_produk) values ('SNG75651', 'PDT69420');
-insert into videomusik(id_video_musik, id_lagu, id_label, email_artis, judul_konten, durasi, tanggal_rilis) values ('MV123221', 'SNG75651', 'LBL23123', '13522420@std.stei.itb.ac.id', 'Long Live Inazuma (MV)', '2024-04-30);
+insert into videomusik(id_video_musik, id_lagu, id_label, email_artis, judul_konten, durasi, tanggal_rilis) values ('MV123221', 'SNG75651', 'LBL23123', '13522420@std.stei.itb.ac.id', 'Long Live Inazuma (MV)', 60, '2024-04-30');
 insert into videoekstra(id_video_ekstra, email_artis, email_host, id_label, durasi, tanggal_rilis) values ('EKS81776', 'jlyptrade6@google.it', '13522420@std.stei.itb.ac.id', 'LBL36151', 4200, '2024-05-01');
 
 
