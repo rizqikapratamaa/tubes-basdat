@@ -5,9 +5,11 @@ create table produk (
     genre VARCHAR(28),
     tanggal_rilis DATE,
     tipe_produk VARCHAR(6),
-    FOREIGN KEY (email_pembuat) REFERENCES appleid(email),
-    CHECK (id_playlist REGEXP '^PD[0-9]{5}$')
+    CHECK (id_produk REGEXP '^PDT[0-9]{5}$')
 );
+
+ALTER TABLE produk
+ADD CONSTRAINT fk_email_pembuat_produk FOREIGN KEY (email_pembuat) REFERENCES appleid(email);
 
 insert into produk (id_produk, email_pembuat, judul_produk, genre, tanggal_rilis, tipe_produk) values ('PDT92852', 'epegrumh@e-recht24.de', 'Broken Arrow', 'Indie Rock', '2015-03-02', 'Album');
 insert into produk (id_produk, email_pembuat, judul_produk, genre, tanggal_rilis, tipe_produk) values ('PDT64411', 'bmacgaughey9@wordpress.com', 'Two Girls and a Sailor', 'Punk', '2022-11-17', 'Album');

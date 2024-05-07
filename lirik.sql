@@ -2,10 +2,16 @@ create table lirik (
 	id_lagu VARCHAR(8),
 	baris INT,
 	email_penulis VARCHAR(29),
-	lirik_lagu TEXT,
-    FOREIGN KEY (id_lagu) REFERENCES lagu(id_lagu),
-    FOREIGN KEY (email_penulis) REFERENCES appleid(email)
+	lirik_lagu TEXT
 );
+
+--Add constrain and foreign key
+ALTER TABLE lirik
+ADD CONSTRAINT fk_id_lagu_lirik FOREIGN KEY (id_lagu) REFERENCES lagu(id_lagu);
+
+ALTER TABLE lirik
+ADD CONSTRAINT fk_email_penulis FOREIGN KEY (email_penulis) REFERENCES appleid(email);
+
 insert into lirik (id_lagu, baris, email_penulis, lirik_lagu) values ('SNG74486', 17, 'hritchie2@nbcnews.com', 'luctus tincidunt nulla mollis molestie');
 insert into lirik (id_lagu, baris, email_penulis, lirik_lagu) values ('SNG46619', 4, 'avaughng@dagondesign.com', 'nec nisi volutpat');
 insert into lirik (id_lagu, baris, email_penulis, lirik_lagu) values ('SNG36115', 6, 'mcanadasa@illinois.edu', 'nulla mollis molestie lorem');
