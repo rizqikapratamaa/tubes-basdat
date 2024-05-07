@@ -1,0 +1,74 @@
+1. Lagu berkualitas: Mengambil daftar nama lagu dengan kualitas audio "Hi-Res Lossless" yang memiliki video musik.
+SELECT l.judul_konten
+FROM lagu AS l, kualitaslagu AS kl, videomusik AS vm
+WHERE l.id_lagu = kl.id_lagu
+    AND l.id_lagu = vm.id_lagu
+    AND kl.kualitas_audio = 'Hi-Res Lossless';
+
+2. Pelajar berdedikasi tinggi: Orang yang memiliki jenis langganan aktif "Pelajar" dan memiliki setidaknya satu lagu dengan kualitas "Dolby Atmos"
+SELECT ai.nama_pengguna
+FROM appleid AS ai
+    NATURAL JOIN langgananAS l
+    NATURAL JOIN subscriptionplan as sp
+WHERE l.status is TRUE
+    AND sp.jenis_langganan = 'Pelajar'
+
+INTERSECT
+
+SELECT ai.nama_pengguna
+FROM appleid AS ai
+    NATURAL JOIN lagu AS l
+    NATURAL JOIN kualitaslagu AS kl
+WHERE kl.kualitas_audio = 'Dolby Atmos';
+
+3. Host setia: Host yang sudah menghabiskan lebih dari 200.000 untuk subscription Apple Music
+SELECT ai.nama_pengguna, SUM(sp.harga_bulanan)
+FROM appleid AS ai
+    NATURAL JOIN videoekstra AS ve
+    NATURAL JOIN langganan AS l
+    NATURAL JOIN subcriptionplan AS sp
+GROUP BY ai.email
+HAVING SUM(sp.harga_bulanan) > 200000;
+
+4. Pelajar multitalenta: Pelajar yang pernah menjadi Artis, Host, dan Writer
+SELECT ai1.nama_pengguna
+FROM applied AS ai1 
+    NATURAL JOIN langganan AS l1
+WHERE l1.jenis_langganan = 'Pelajar'
+    AND ai1.email IN (
+	SELECT ai.nama_pengguna
+	FROM appleid AS ai, lagu AS l, videoekstra AS ve, liriklagu AS ll
+	WHERE ai.email = l.email_artis
+    	    AND ai.email = ve.email_host
+    	    AND ai.email = ll.email_penulis
+    );
+
+5. Artis populer: Artis yang lagunya dimasukkan pada setidaknya 5 playlist
+SELECT ai.nama_pengguna
+FROM appleid AS ai, lagu AS l
+WHERE ai.email = l.email_artis
+
+INTERSECT
+
+SELECT ai.nama_pengguna
+FROM appleid AS ai
+WHERE 5 <= (
+        SELECT COUNT(kp.id_konten)
+	FROM lagu AS l, pemasaran AS p, kontenplaylist AS kp
+	WHERE ai.email = l.email_artis
+	    AND l.id_lagu = p.id_lagu
+	    AND p.id_lagu = kp.id_konten
+	GROUP BY (ai.email)
+    );
+
+
+
+
+
+
+
+
+
+
+
+
