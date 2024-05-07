@@ -1,4 +1,4 @@
-create table lirik (
+create table liriklagu (
 	id_lagu VARCHAR(8),
 	baris INT,
 	email_penulis VARCHAR(50),
