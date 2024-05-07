@@ -30,9 +30,14 @@ FROM appleid AS ai
 GROUP BY ai.email
 HAVING SUM(sp.harga_bulanan) > 200000;
 
+insert into langganan (email, jenis_langganan, tanggal_mulai, tanggal_berakhir) values ('acettell1@salon.com', 'Perorangan', '2010-10-01', '2010-11-01');
+insert into langganan (email, jenis_langganan, tanggal_mulai, tanggal_berakhir) values ('acettell1@salon.com', 'Perorangan', '2010-11-02', '2010-12-02');
+insert into langganan (email, jenis_langganan, tanggal_mulai, tanggal_berakhir) values ('acettell1@salon.com', 'Perorangan', '2010-12-03', '2011-01-03');
+insert into langganan (email, jenis_langganan, tanggal_mulai, tanggal_berakhir) values ('acettell1@salon.com', 'Perorangan', '2011-01-04', '2011-02-04');
+
 4. Pelajar multitalenta: Pelajar yang pernah menjadi Artis, Host, dan Writer
 SELECT ai1.nama_pengguna
-FROM applied AS ai1 
+FROM appleid AS ai1 
     NATURAL JOIN langganan AS l1
 WHERE l1.jenis_langganan = 'Pelajar'
     AND ai1.email IN (
@@ -42,6 +47,18 @@ WHERE l1.jenis_langganan = 'Pelajar'
     	    AND ai.email = ve.email_host
     	    AND ai.email = ll.email_penulis
     );
+
+// TO DO: Masukkan ke user.txt dari data di bawah ini:
+// email (semua, artis, host, writer), id_lagu, id_produk, id_video_musik, id_video_ekstra karena baru, sisanya make yg udh ada
+
+insert into appleid(email, password, nama_pengguna, no_telp_pemulihan) values ('13522420@std.stei.itb.ac.id', '1n4zum4 sh1n3s 3t3rn4l', 'Raiden Shogun', '+69 735 155 6533');
+insert into langganan(email, jenis_langganan, tanggal_mulai, tanggal_berakhir) values ('13522420@std.stei.itb.ac.id', 'Pelajar', '2024-04-20', '2024-05-20');
+insert into lagu(id_lagu, email_artis, id_label, judul_konten, durasi, tanggal_rilis) values ('SNG75651', '13522420@std.stei.itb.ac.id', 'LBL23123', 'Long Live Inazuma', 600, '2024-04-25');
+insert into produk(id_produk, email_pembuat, judul_produk, genre, tanggal_rilis, tipe_produk) values ('PDT69420', '13522420@std.stei.itb.ac.id', 'Ei', 'Folk', '2024-04-25', 'Single');
+insert into pemasaran(id_lagu, id_produk) values ('SNG75651', 'PDT69420');
+insert into videomusik(id_video_musik, id_lagu, id_label, email_artis, judul_konten, durasi, tanggal_rilis) values ('MV123221', 'SNG75651', 'LBL23123', '13522420@std.stei.itb.ac.id', 'Long Live Inazuma (MV)', '2024-04-30);
+insert into videoekstra(id_video_ekstra, email_artis, email_host, id_label, durasi, tanggal_rilis) values ('EKS81776', 'jlyptrade6@google.it', '13522420@std.stei.itb.ac.id', 'LBL36151', 4200, '2024-05-01');
+
 
 5. Artis populer: Artis yang lagunya berkualitas dan dimasukkan pada setidaknya 5 playlist
 SELECT ai.nama_pengguna
@@ -61,6 +78,23 @@ WHERE 5 <= (
 	    AND p.id_lagu = kp.id_konten
 	GROUP BY (ai.email)
     );
+
+// TO DO: Masukkan ke user.txt dari data di bawah ini:
+// id_lagu dan id_produk-nya karena baru, sisanya make yg udh ada
+
+insert into lagu (id_lagu, email_artis, id_label, judul_konten, durasi, tanggal_rilis) values ('SNG42861', 'jlyptrade6@google.it', 'LBL04529', 'Squidward Nose', 477, '2022-12-01');
+insert into kualitaslagu (id_lagu, kualitas_audio) values ('SNG42861', 'Dolby Atmos');
+insert into produk (id_produk, email_pembuat, judul_produk, genre, tanggal_rilis, tipe_produk) values ('PDT76513', 'jlyptrade6@google.it', 'Squidward Nose', 'Pop', '2012-12-02', 'Single');
+insert into pemasaran (id_lagu, id_produk) values ('SNG42861', 'PDT76513');
+insert into kontenplaylist (id_playlist, email_pembuat_konten, id_konten, id_produk) values ('PL667277', 'jlyptrade6@google.it', 'SNG42861', 'PDT76513');
+insert into kontenplaylist (id_playlist, email_pembuat_konten, id_konten, id_produk) values ('PL000152', 'jlyptrade6@google.it', 'SNG42861', 'PDT76513');
+insert into kontenplaylist (id_playlist, email_pembuat_konten, id_konten, id_produk) values ('PL862217', 'jlyptrade6@google.it', 'SNG42861', 'PDT76513');
+insert into kontenplaylist (id_playlist, email_pembuat_konten, id_konten, id_produk) values ('PL984738', 'jlyptrade6@google.it', 'SNG42861', 'PDT76513');
+insert into kontenplaylist (id_playlist, email_pembuat_konten, id_konten, id_produk) values ('PL855189', 'jlyptrade6@google.it', 'SNG42861', 'PDT76513');
+insert into kontenplaylist (id_playlist, email_pembuat_konten, id_konten, id_produk) values ('PL983007', 'jlyptrade6@google.it', 'SNG42861', 'PDT76513');
+insert into kontenplaylist (id_playlist, email_pembuat_konten, id_konten, id_produk) values ('PL578910', 'jlyptrade6@google.it', 'SNG42861', 'PDT76513');
+
+
 
 
 
