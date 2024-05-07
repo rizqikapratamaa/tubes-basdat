@@ -55,4 +55,7 @@ insert into kualitaslagu (id_lagu, kualitas_audio) values ('SNG84525', 'Hi-Res L
 insert into kualitaslagu (id_lagu, kualitas_audio) values ('SNG99950', 'Dolby Atmos');
 insert into kualitaslagu (id_lagu, kualitas_audio) values ('SNG63620', 'Hi-Res Lossless');
 insert into kualitaslagu (id_lagu, kualitas_audio) values ('SNG25566', 'Dolby Atmos');
-insert into kualitaslagu (id_lagu, kualitas_audio) values ('SNG55061', 'Cukimai');
+insert into kualitaslagu (id_lagu, kualitas_audio) values ('SNG25566', 'Dolby Atmos');
+insert into kualitaslagu (id_lagu, kualitas_audio) values ('SNG25566', 'Dolby Atmos');
+insert into kualitaslagu (id_lagu, kualitas_audio) values ('SNG09121', 'Dolby Atmos');
+insert into kualitaslagu (id_lagu, kualitas_audio) values ('SNG09121', 'Hi-Res Lossless');

@@ -6,7 +6,8 @@ create table videomusik (
 	judul_konten TEXT,
 	durasi INT,
 	tanggal_rilis DATE,
-	CHECK (id_video_musik REGEXP '^MV[0-9]{6}$')
+	CHECK (id_video_musik REGEXP '^MV[0-9]{6}$'),
+  FOREIGN KEY (email_artis) REFERENCES appleid(email)
 );
 
 -- Add constrain foreign key
@@ -197,20 +198,3 @@ insert into VideoMusik (id_video_musik, id_lagu, id_label, email_artis, judul_ko
 insert into VideoMusik (id_video_musik, id_lagu, id_label, email_artis, judul_konten, durasi, tanggal_rilis) values ('MV585846', 'SNG43131', 'LBL83521', 'jlyptrade6@google.it', 'Battle of the Rails, The (La bataille du rail)', 76, '2016-04-22');
 insert into VideoMusik (id_video_musik, id_lagu, id_label, email_artis, judul_konten, durasi, tanggal_rilis) values ('MV806453', 'SNG43576', 'LBL88736', 'jlyptrade6@google.it', 'Blue Velvet', 405, '2017-06-15');
 insert into VideoMusik (id_video_musik, id_lagu, id_label, email_artis, judul_konten, durasi, tanggal_rilis) values ('MV676574', 'SNG43799', 'LBL48380', 'jlyptrade6@google.it', 'Revolution OS', 257, '2021-08-17');
-SELECT 
-  GROUP_CONCAT(lagu.email_artis SEPARATOR ', ') AS concatenated_emails
-FROM 
-  lagu
-INNER JOIN 
-  appleid 
-ON 
-  lagu.email_artis = appleid.email;
-
-SELECT 
-  GROUP_CONCAT(lagu.id_lagu SEPARATOR ', ') AS concatenated_emails
-FROM 
-  lagu
-INNER JOIN 
-  appleid 
-ON 
-  lagu.email_artis = appleid.email;
