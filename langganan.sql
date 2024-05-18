@@ -30,6 +30,16 @@ BEGIN
     -- Tambahkan 1 ke last_id untuk mendapatkan id_langganan baru
     SET NEW.id_langganan = last_id + 1;
 END;
+
+CREATE TRIGGER status_update
+BEFORE UPDATE ON langganan
+FOR EACH ROW
+BEGIN
+    IF NEW.status_aktif = TRUE AND OLD.status_aktif = FALSE THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'status langganan tidak dapat berubah dari FALSE menjadi TRUE';
+    END IF;
+END;
 //
 DELIMITER ;
 

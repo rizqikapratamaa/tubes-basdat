@@ -19,6 +19,58 @@ ADD CONSTRAINT fk_email_host FOREIGN KEY (email_host) REFERENCES appleid(email);
 ALTER TABLE videoekstra
 ADD CONSTRAINT fk_id_label FOREIGN KEY (id_label) REFERENCES label(id_label);
 
+DELIMITER $$
+
+CREATE DEFINER=CURRENT_USER TRIGGER validasi_keaktifan_artis
+BEFORE INSERT ON lagu
+FOR EACH ROW
+BEGIN
+    DECLARE email_email_artis VARCHAR(255);
+    DECLARE artis_aktif BOOLEAN DEFAULT FALSE;
+
+    -- Check if the artist's email exists
+    SELECT email INTO email_email_artis
+    FROM appleid
+    WHERE email = NEW.email_artis
+    LIMIT 1;
+
+    IF email_email_artis IS NULL THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Email artis tidak ditemukan';
+    END IF;
+
+    -- Check if the artist has an active subscription
+    SELECT status_aktif INTO artis_aktif
+    FROM langganan
+    WHERE email = email_email_artis
+    AND status_aktif = 1
+    LIMIT 1;
+
+    IF artis_aktif IS  THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Artis tidak memiliki langganan aktif';
+    END IF;
+END$$
+
+DELIMITER ;
+
+
+CREATE VIEW statistik_artis AS
+    SELECT 
+        COUNT(DISTINCT l.id_lagu) AS banyak_lagu, 
+        COUNT(DISTINCT e.id_video_ekstra) AS banyak_video_ekstra, 
+        COUNT(DISTINCT m.id_video_musik) AS banyak_video_musik, 
+        l.email_artis
+    FROM lagu l
+    LEFT JOIN videoekstra e ON l.email_artis = e.email_artis
+    LEFT JOIN videomusik m ON l.email_artis = m.email_artis
+    GROUP BY email_artis;
+
+CREATE DEFINER=CURRENT_USER TRIGGER one_only 
+BEFORE INSERT ON produk
+
+
+
 
 insert into VideoEkstra (id_video_ekstra, email_artis, email_host, id_label, durasi, tanggal_rilis) values ('EKS84085', 'wromanf@ihg.com', 'aarckoll8@google.ca', 'LBL58495', 2479, '2000-08-07');
 insert into VideoEkstra (id_video_ekstra, email_artis, email_host, id_label, durasi, tanggal_rilis) values ('EKS47826', 'acettell1@salon.com', 'bmacgaughey9@wordpress.com', 'LBL83521', 10479, '2006-03-17');
